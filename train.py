@@ -140,10 +140,12 @@ def main():
     # scheduler = eval(args.scheduler)
     optimizer = eval(args.optimizer, {"optim": optim, "model": model})
     scheduler = eval(args.scheduler, {"optim": optim, "optimizer": optimizer})
+    train_transforms = eval(args.train_transforms)
+    test_transforms = eval(args.test_transforms)
     # optimizer = globals()[args.optimizer]
     # scheduler = globals()[args.scheduler] if args.scheduler != "None" else None
-    train_transforms = globals()[args.train_transforms]
-    test_transforms = globals()[args.test_transforms]
+    # train_transforms = globals()[args.train_transforms]
+    # test_transforms = globals()[args.test_transforms]
 
     train_dataset = datasets.MNIST('./data', train=True, download=True, transform=train_transforms)
     test_dataset = datasets.MNIST('./data', train=False, download=True, transform=test_transforms)
