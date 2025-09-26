@@ -136,8 +136,10 @@ def main():
     model = model_class().to(device)
 
     # --- fetch optimizer/scheduler objects from globals ---
-    optimizer = eval(args.optimizer)
-    scheduler = eval(args.scheduler)
+    # optimizer = eval(args.optimizer)
+    # scheduler = eval(args.scheduler)
+    optimizer = eval(args.optimizer, {"optim": optim, "model": model})
+    scheduler = eval(args.scheduler, {"optim": optim, "optimizer": optimizer})
     # optimizer = globals()[args.optimizer]
     # scheduler = globals()[args.scheduler] if args.scheduler != "None" else None
     train_transforms = globals()[args.train_transforms]
