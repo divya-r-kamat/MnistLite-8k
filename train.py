@@ -118,10 +118,15 @@ def main():
     # Required arguments
     parser.add_argument('--model', type=str, required=True,
                         help='Path to model file (e.g., model1.py)')
-    
+
+    parser.add_argument('--optimizer', type=str, required=True, help="Name of optimizer variable")
+    parser.add_argument('--scheduler', type=str, required=True, help="Name of scheduler variable")
+    parser.add_argument('--train_transforms', type=str, required=True, help="Train transforms variable name")
+    parser.add_argument('--test_transforms', type=str, required=True, help="Test transforms variable name")
     # Training parameters
     parser.add_argument('--epochs', type=int, default=15,
                         help='Number of epochs to train (default: 15)')
+
 
     args = parser.parse_args()
     model_class = load_model_from_file(args.model)
@@ -130,23 +135,11 @@ def main():
     device = torch.device("cuda" if cuda else "cpu")
     model = model_class().to(device)
 
-
-
-
-    # Train Phase transformations
-    train_transforms = transforms.Compose([
-                                          transforms.RandomRotation(3),                        # more tolerance for rotation
-                                          transforms.RandomAffine(0, translate=(0.05, 0.05), shear=5),  # add shear for slants
-                                          transforms.ToTensor(),
-                                          transforms.Normalize((0.1307,), (0.3081,)) # The mean and std have to be sequences (e.g., tuples), therefore you should add a comma after the values.
-                                          # Note the difference between (0.1307) and (0.1307,)
-                                          ])
-
-    # Test Phase transformations
-    test_transforms = transforms.Compose([
-                                          transforms.ToTensor(),
-                                          transforms.Normalize((0.1307,), (0.3081,))
-                                          ])
+    # --- fetch optimizer/scheduler objects from globals ---
+    optimizer = globals()[args.optimizer]
+    scheduler = globals()[args.scheduler] if args.scheduler != "None" else None
+    train_transforms = globals()[args.train_transforms]
+    test_transforms = globals()[args.test_transforms]
 
     train_dataset = datasets.MNIST('./data', train=True, download=True, transform=train_transforms)
     test_dataset = datasets.MNIST('./data', train=False, download=True, transform=test_transforms)
@@ -160,8 +153,8 @@ def main():
     # test dataloader
     test_loader = torch.utils.data.DataLoader(test_dataset, **dataloader_args)
 
-    optimizer = optim.SGD(model.parameters(), lr=0.03, momentum=0.9,nesterov=True, weight_decay=1e-4)
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=15, eta_min=0.0005)
+    # optimizer = optim.SGD(model.parameters(), lr=0.03, momentum=0.9,nesterov=True, weight_decay=1e-4)
+    # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=15, eta_min=0.0005)
 
     num_epochs = 15
 
