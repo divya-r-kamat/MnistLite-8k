@@ -347,6 +347,20 @@ E- arly training shows very fast convergence. Performance plateaus around 99%, s
     Estimated Total Size (MB): 0.42
     ----------------------------------------------------------------
 
+### Receptive Field
+
+conv1 (3×3): RF = 1 + (3-1)×1 = 3
+conv2 (3×3): RF = 3 + (3-1)×1 = 5
+pool1 (2×2, stride=2): RF = 5 + (2-1)×1 = 6, stride becomes 2
+conv3 (1×1): RF = 6 + (1-1)×2 = 6
+conv4 (3×3): RF = 6 + (3-1)×2 = 10
+conv5 (3×3): RF = 10 + (3-1)×2 = 14
+pool2 (2×2, stride=2): RF = 14 + (2-1)×2 = 16, stride becomes 4
+conv6 (1×1): RF = 16 + (1-1)×4 = 16
+conv7 (3×3): RF = 16 + (3-1)×4 = 24
+
+Final Receptive Field: 24×24
+This means each output neuron can "see" a 24×24 pixel region from the original 28×28 MNIST input image. Since MNIST digits typically occupy most of the 28×28 space, this receptive field size should be sufficient to capture the essential features of handwritten digits.
 
 ### Training Logs
 
