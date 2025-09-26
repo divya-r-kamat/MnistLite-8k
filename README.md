@@ -15,14 +15,15 @@ We start with first iteration
 ### Results:
 - Parameters: 26.5k
 - Best Training Accuracy: 99.64%
-- Best Test Accuracy: 99.00%
+- Best Test Accuracy: 99.13%
 ### Analysis
-- In the initial epochs, the model quickly jumps from ~69% test accuracy (Epoch 1) to ~96% (Epoch 2) and ~98%+ by Epoch 3–4. This shows the network is learning the MNIST features very efficiently even with a small parameter count.
-- Training accuracy steadily rises and exceeds 99% around Epoch 10, while test accuracy stabilizes between 98.8–99.0%.
-- There is no major overfitting observed — the gap between training and test accuracy remains within ~0.5–0.6%, which is acceptable.
-- The model is relatively lightweight (26k params) compared to typical CNNs on MNIST, yet it achieves strong performance close to larger networks.
-- Slight oscillations in test accuracy after Epoch 10 (98.89% → 99.00% → 98.95%) are normal variance, not a sign of severe overfitting.
-- Early training shows very fast convergence. No significant overfitting is visible, though performance seems to have plateaued around 99%, suggesting that improvements will likely come from architectural tweaks rather than longer training.
+- In the initial epochs, the model quickly jumps from ~62% test accuracy (Epoch 1) to ~97.74% (Epoch 2) and ~98%+ by Epoch 3–4. This shows the network is learning MNIST features very efficiently even with a small parameter count.
+- Training accuracy steadily rises and exceeds 99% around Epoch 10, while test accuracy stabilizes between 98.8–99.1%.
+- No major overfitting observed — the gap between training and test accuracy remains within ~0.5%, which is acceptable.
+- The model is relatively lightweight (26.5k params) compared to typical CNNs on MNIST, yet it achieves strong performance close to larger networks.
+Slight oscillations in test accuracy after Epoch 10 (e.g., 99.06 → 98.85 → 98.97 → 99.13) are normal variance, not a sign of instability.
+- One-off spike in training loss at Epoch 8 (0.2567) despite high accuracy could be due to noisy batch or optimizer behavior.
+E- arly training shows very fast convergence. Performance plateaus around 99%, suggesting further gains may require architectural changes or regularization.
 
 ### Model Architecture
 
@@ -134,13 +135,13 @@ We start with first iteration
 - Add BatchNorm after convs → stabilize training, faster convergence, better generalization
 ### Results:
 - Parameters: 5.6k
-- Best Training Accuracy: 99.48%
-- Best Test Accuracy: By Epoch 13–15: ~99.0–99.18%.
+- Best Training Accuracy: 99.57%
+- Best Test Accuracy: 99.13%
 ### Analysis
 - lighter model + GAP + BN gave better stability, fewer params, and accuracy that scales above 99% by 13–15 epochs.
-- still a bit short of the 99.4% milestone (peaked at ~99.18%).
-- Notice how training loss is stable and doesn’t collapse/oscillate.
-- This iteration is clearly more efficient and better aligned with our goal compared to the first model.
+- still far of the 99.4% milestone (peaked at ~99.13%).
+- BatchNorm and GAP contribute to stable training and reduced overfitting — the test accuracy remains close to training accuracy throughout..
+- However, the goal of consistently hitting 99.4% is not yet met — performance plateaus around 99.1–99.2%..
 
 ### Model Architecture
 
@@ -258,22 +259,33 @@ We start with first iteration
     Train loss=0.0275 batch_id=468 Accuracy=99.57: 100% 469/469 [00:12<00:00, 37.50it/s]
     Test set: Average loss: 0.0298, Accuracy: 9906/10000 (99.06%)
 
+### Misclassifications from model2
+
+<img width="794" height="812" alt="image" src="https://github.com/user-attachments/assets/f45891bf-4be8-4dfd-b090-67cb9d667b80" />
 
 ## Model3
 
 ### Target:
-- Make the model lighter (reduce parameter count, stay < 8k)
-- Use Global Average Pooling (GAP) → reduces overfitting, removes need for large dense layer
-- Add BatchNorm after convs → stabilize training, faster convergence, better generalization
+- Add Dropout to reduce overfitting and improve generalization
+- Increase parameter count from ~5k to ~7.8k for better capacity
+- Use CosineAnnealingLR scheduler for smoother learning rate decay
+- Use SGD with Nesterov momentum and weight decay for better convergence
+- Apply data augmentation: RandomRotation, RandomAffine, Shear, Translation (by looking at the misclaasifications from model2)
+- Retain BatchNorm and GAP for stable training and compact outputgeneralization
 ### Results:
-- Parameters: 5.6k
-- Best Training Accuracy: 99.48%
-- Best Test Accuracy: By Epoch 13–15: ~99.0–99.18%.
+- Parameters: 7,864
+- Best Training Accuracy: 99.36%
+- Best Test Accuracy: 99.42%
+- Achieved 99.4%+ test accuracy consistently by Epoch 11–15
 ### Analysis
-- lighter model + GAP + BN gave better stability, fewer params, and accuracy that scales above 99% by 13–15 epochs.
-- still a bit short of the 99.4% milestone (peaked at ~99.18%).
-- Notice how training loss is stable and doesn’t collapse/oscillate.
-- This iteration is clearly more efficient and better aligned with our goal compared to the first model.
+- The model shows strong early performance, reaching 98.27% test accuracy in Epoch 1 and 99.16% by Epoch 3, indicating fast and stable convergence.
+- Dropout layers help maintain generalization, with minimal overfitting observed — test accuracy closely tracks training accuracy throughout.
+- CosineAnnealingLR scheduler contributes to smooth learning rate decay, helping the model avoid sharp drops or spikes in performance.
+- SGD with Nesterov momentum and weight decay improves optimization dynamics, especially in later epochs.
+- Data augmentation adds robustness, helping the model generalize better to unseen data and pushing test accuracy past 99.4%.
+- The model consistently hits 99.4%+ test accuracy from Epoch 9 onward, meeting the target goal within 15 epochs.
+- Despite increasing parameters to ~7.8k, the model remains lightweight and efficient, balancing capacity and generalization well.
+- Final test accuracy of 99.42% with stable loss (~0.018) confirms that the model is well-regularized and optimized.
 
 ### Model Architecture
 
