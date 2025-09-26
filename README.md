@@ -66,6 +66,65 @@ We start with first iteration
 
 ### Training Logs
 
+    Epoch 1
+    Train loss=0.1072 batch_id=468 Accuracy=62.38: 100% 469/469 [00:12<00:00, 38.92it/s]
+    Test set: Average loss: 0.1845, Accuracy: 9393/10000 (93.93%)
+    
+    Epoch 2
+    Train loss=0.1953 batch_id=468 Accuracy=96.42: 100% 469/469 [00:12<00:00, 38.63it/s]
+    Test set: Average loss: 0.0693, Accuracy: 9774/10000 (97.74%)
+    
+    Epoch 3
+    Train loss=0.0355 batch_id=468 Accuracy=97.80: 100% 469/469 [00:12<00:00, 38.51it/s]
+    Test set: Average loss: 0.0575, Accuracy: 9804/10000 (98.04%)
+    
+    Epoch 4
+    Train loss=0.0486 batch_id=468 Accuracy=98.38: 100% 469/469 [00:12<00:00, 38.97it/s]
+    Test set: Average loss: 0.0494, Accuracy: 9838/10000 (98.38%)
+    
+    Epoch 5
+    Train loss=0.0223 batch_id=468 Accuracy=98.69: 100% 469/469 [00:11<00:00, 41.22it/s]
+    Test set: Average loss: 0.0397, Accuracy: 9871/10000 (98.71%)
+    
+    Epoch 6
+    Train loss=0.0085 batch_id=468 Accuracy=98.92: 100% 469/469 [00:12<00:00, 38.89it/s]
+    Test set: Average loss: 0.0430, Accuracy: 9866/10000 (98.66%)
+    
+    Epoch 7
+    Train loss=0.0446 batch_id=468 Accuracy=99.05: 100% 469/469 [00:12<00:00, 38.87it/s]
+    Test set: Average loss: 0.0338, Accuracy: 9887/10000 (98.87%)
+    
+    Epoch 8
+    Train loss=0.2567 batch_id=468 Accuracy=99.12: 100% 469/469 [00:12<00:00, 38.64it/s]
+    Test set: Average loss: 0.0311, Accuracy: 9906/10000 (99.06%)
+    
+    Epoch 9
+    Train loss=0.0181 batch_id=468 Accuracy=99.28: 100% 469/469 [00:12<00:00, 39.08it/s]
+    Test set: Average loss: 0.0388, Accuracy: 9885/10000 (98.85%)
+    
+    Epoch 10
+    Train loss=0.0428 batch_id=468 Accuracy=99.28: 100% 469/469 [00:12<00:00, 38.84it/s]
+    Test set: Average loss: 0.0310, Accuracy: 9897/10000 (98.97%)
+    
+    Epoch 11
+    Train loss=0.0022 batch_id=468 Accuracy=99.39: 100% 469/469 [00:12<00:00, 38.89it/s]
+    Test set: Average loss: 0.0309, Accuracy: 9912/10000 (99.12%)
+    
+    Epoch 12
+    Train loss=0.0033 batch_id=468 Accuracy=99.44: 100% 469/469 [00:12<00:00, 38.32it/s]
+    Test set: Average loss: 0.0324, Accuracy: 9902/10000 (99.02%)
+    
+    Epoch 13
+    Train loss=0.0004 batch_id=468 Accuracy=99.49: 100% 469/469 [00:12<00:00, 38.82it/s]
+    Test set: Average loss: 0.0310, Accuracy: 9908/10000 (99.08%)
+    
+    Epoch 14
+    Train loss=0.0033 batch_id=468 Accuracy=99.59: 100% 469/469 [00:11<00:00, 39.25it/s]
+    Test set: Average loss: 0.0362, Accuracy: 9904/10000 (99.04%)
+    
+    Epoch 15
+    Train loss=0.0147 batch_id=468 Accuracy=99.58: 100% 469/469 [00:12<00:00, 38.86it/s]
+    Test set: Average loss: 0.0380, Accuracy: 9913/10000 (99.13%)
 
 ## Model2
 
@@ -138,6 +197,66 @@ We start with first iteration
 
 
 ### Training Logs
+
+    Epoch 1
+    Train loss=0.0637 batch_id=468 Accuracy=91.11: 100% 469/469 [00:12<00:00, 37.89it/s]
+    Test set: Average loss: 0.0782, Accuracy: 9796/10000 (97.96%)
+    
+    Epoch 2
+    Train loss=0.0363 batch_id=468 Accuracy=98.12: 100% 469/469 [00:12<00:00, 38.95it/s]
+    Test set: Average loss: 0.0612, Accuracy: 9843/10000 (98.43%)
+    
+    Epoch 3
+    Train loss=0.0202 batch_id=468 Accuracy=98.53: 100% 469/469 [00:12<00:00, 38.82it/s]
+    Test set: Average loss: 0.0428, Accuracy: 9861/10000 (98.61%)
+    
+    Epoch 4
+    Train loss=0.0086 batch_id=468 Accuracy=98.81: 100% 469/469 [00:12<00:00, 38.22it/s]
+    Test set: Average loss: 0.0356, Accuracy: 9885/10000 (98.85%)
+    
+    Epoch 5
+    Train loss=0.0729 batch_id=468 Accuracy=98.94: 100% 469/469 [00:12<00:00, 38.02it/s]
+    Test set: Average loss: 0.0353, Accuracy: 9885/10000 (98.85%)
+    
+    Epoch 6
+    Train loss=0.0816 batch_id=468 Accuracy=99.08: 100% 469/469 [00:12<00:00, 37.20it/s]
+    Test set: Average loss: 0.0423, Accuracy: 9870/10000 (98.70%)
+    
+    Epoch 7
+    Train loss=0.0048 batch_id=468 Accuracy=99.18: 100% 469/469 [00:12<00:00, 37.99it/s]
+    Test set: Average loss: 0.0341, Accuracy: 9886/10000 (98.86%)
+    
+    Epoch 8
+    Train loss=0.0203 batch_id=468 Accuracy=99.19: 100% 469/469 [00:12<00:00, 37.81it/s]
+    Test set: Average loss: 0.0334, Accuracy: 9895/10000 (98.95%)
+    
+    Epoch 9
+    Train loss=0.0063 batch_id=468 Accuracy=99.31: 100% 469/469 [00:12<00:00, 38.32it/s]
+    Test set: Average loss: 0.0290, Accuracy: 9908/10000 (99.08%)
+    
+    Epoch 10
+    Train loss=0.0046 batch_id=468 Accuracy=99.39: 100% 469/469 [00:11<00:00, 39.16it/s]
+    Test set: Average loss: 0.0317, Accuracy: 9896/10000 (98.96%)
+    
+    Epoch 11
+    Train loss=0.0148 batch_id=468 Accuracy=99.42: 100% 469/469 [00:12<00:00, 38.17it/s]
+    Test set: Average loss: 0.0315, Accuracy: 9894/10000 (98.94%)
+    
+    Epoch 12
+    Train loss=0.0436 batch_id=468 Accuracy=99.48: 100% 469/469 [00:12<00:00, 37.82it/s]
+    Test set: Average loss: 0.0294, Accuracy: 9907/10000 (99.07%)
+    
+    Epoch 13
+    Train loss=0.0280 batch_id=468 Accuracy=99.50: 100% 469/469 [00:12<00:00, 37.83it/s]
+    Test set: Average loss: 0.0255, Accuracy: 9913/10000 (99.13%)
+    
+    Epoch 14
+    Train loss=0.0367 batch_id=468 Accuracy=99.50: 100% 469/469 [00:12<00:00, 38.01it/s]
+    Test set: Average loss: 0.0326, Accuracy: 9898/10000 (98.98%)
+    
+    Epoch 15
+    Train loss=0.0275 batch_id=468 Accuracy=99.57: 100% 469/469 [00:12<00:00, 37.50it/s]
+    Test set: Average loss: 0.0298, Accuracy: 9906/10000 (99.06%)
 
 
 ## Model3
@@ -219,3 +338,65 @@ We start with first iteration
 
 ### Training Logs
 
+    Epoch 1
+    Train loss=0.0953 batch_id=468 Accuracy=93.35: 100% 469/469 [00:20<00:00, 23.31it/s]
+    Test set: Average loss: 0.0573, Accuracy: 9827/10000 (98.27%)
+    
+    Epoch 2
+    Train loss=0.0164 batch_id=468 Accuracy=97.98: 100% 469/469 [00:21<00:00, 21.79it/s]
+    Test set: Average loss: 0.0383, Accuracy: 9875/10000 (98.75%)
+    
+    Epoch 3
+    Train loss=0.0280 batch_id=468 Accuracy=98.38: 100% 469/469 [00:21<00:00, 21.72it/s]
+    Test set: Average loss: 0.0275, Accuracy: 9916/10000 (99.16%)
+    
+    Epoch 4
+    Train loss=0.0396 batch_id=468 Accuracy=98.62: 100% 469/469 [00:21<00:00, 22.23it/s]
+    Test set: Average loss: 0.0293, Accuracy: 9902/10000 (99.02%)
+    
+    Epoch 5
+    Train loss=0.0102 batch_id=468 Accuracy=98.75: 100% 469/469 [00:19<00:00, 23.73it/s]
+    Test set: Average loss: 0.0222, Accuracy: 9919/10000 (99.19%)
+    
+    Epoch 6
+    Train loss=0.0113 batch_id=468 Accuracy=98.85: 100% 469/469 [00:21<00:00, 22.01it/s]
+    Test set: Average loss: 0.0256, Accuracy: 9922/10000 (99.22%)
+    
+    Epoch 7
+    Train loss=0.0568 batch_id=468 Accuracy=98.91: 100% 469/469 [00:21<00:00, 22.05it/s]
+    Test set: Average loss: 0.0244, Accuracy: 9917/10000 (99.17%)
+    
+    Epoch 8
+    Train loss=0.0426 batch_id=468 Accuracy=99.00: 100% 469/469 [00:21<00:00, 22.12it/s]
+    Test set: Average loss: 0.0221, Accuracy: 9927/10000 (99.27%)
+    
+    Epoch 9
+    Train loss=0.0631 batch_id=468 Accuracy=99.12: 100% 469/469 [00:20<00:00, 22.88it/s]
+    Test set: Average loss: 0.0195, Accuracy: 9940/10000 (99.40%)
+    
+    Epoch 10
+    Train loss=0.1005 batch_id=468 Accuracy=99.15: 100% 469/469 [00:20<00:00, 23.25it/s]
+    Test set: Average loss: 0.0205, Accuracy: 9933/10000 (99.33%)
+    
+    Epoch 11
+    Train loss=0.0061 batch_id=468 Accuracy=99.20: 100% 469/469 [00:21<00:00, 21.62it/s]
+    Test set: Average loss: 0.0183, Accuracy: 9941/10000 (99.41%)
+    
+    Epoch 12
+    Train loss=0.0300 batch_id=468 Accuracy=99.28: 100% 469/469 [00:21<00:00, 21.60it/s]
+    Test set: Average loss: 0.0181, Accuracy: 9942/10000 (99.42%)
+    
+    Epoch 13
+    Train loss=0.0048 batch_id=468 Accuracy=99.33: 100% 469/469 [00:20<00:00, 22.34it/s]
+    Test set: Average loss: 0.0183, Accuracy: 9940/10000 (99.40%)
+    
+    Epoch 14
+    Train loss=0.0475 batch_id=468 Accuracy=99.27: 100% 469/469 [00:20<00:00, 22.97it/s]
+    Test set: Average loss: 0.0178, Accuracy: 9940/10000 (99.40%)
+    
+    Epoch 15
+    Train loss=0.0140 batch_id=468 Accuracy=99.36: 100% 469/469 [00:21<00:00, 22.21it/s]
+    Test set: Average loss: 0.0180, Accuracy: 9941/10000 (99.41%)
+
+### Plots
+<img width="1249" height="836" alt="image" src="https://github.com/user-attachments/assets/a882effe-9549-4cd8-b280-3e2eb2c1e8ec" />
