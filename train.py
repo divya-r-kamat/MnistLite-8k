@@ -147,6 +147,7 @@ def main():
     # train_transforms = globals()[args.train_transforms]
     # test_transforms = globals()[args.test_transforms]
 
+    print("\nDownload the train and test dataset, with transforms....")
     train_dataset = datasets.MNIST('./data', train=True, download=True, transform=train_transforms)
     test_dataset = datasets.MNIST('./data', train=False, download=True, transform=test_transforms)
 
@@ -161,6 +162,8 @@ def main():
 
     # optimizer = optim.SGD(model.parameters(), lr=0.03, momentum=0.9,nesterov=True, weight_decay=1e-4)
     # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=15, eta_min=0.0005)
+
+    print("\nModel Training....\n")
 
     num_epochs = 15
 
